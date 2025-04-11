@@ -1,8 +1,4 @@
 /.DS_Store
-/addons
-/config
-/docker-compose.yaml
-/Terraform/terraform-user_credentials.csv
 AWSCLIV2.pkg
 Terraform/.terraform.lock.hcl
 Terraform/cli-user_accessKeys.csv
