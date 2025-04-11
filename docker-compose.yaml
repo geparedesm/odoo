@@ -24,6 +24,13 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
+    resources:
+      cpu:
+        soft: 1
+        hard: 1
+      memory: 512m
+      devices:
+        - /dev/sda:/dev/sda
   db:
     image: postgres:15
     environment:
