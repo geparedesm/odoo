@@ -22,4 +22,4 @@
   sudo systemctl restart docker
 
   #Build containers
-  sudo docker compose -f /home/ubuntu/aj_fencing_page/docker-compose.yml up -d
+  sudo docker compose -f /home/ubuntu/aj_fencing_page/docker-compose.yaml up -d
