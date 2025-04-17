@@ -1,6 +1,6 @@
 #!/bin/bash
   #Clone repo
-  cd /home/ubuntu && git clone https://github.com/geparedesm/aj_fencing_page.git
+  cd /home/ubuntu && git clone https://github.com/geparedesm/odoo.git
   # Install docker
   sudo apt-get -y update
   sudo apt-get -y install ca-certificates curl
@@ -22,4 +22,4 @@
   sudo systemctl restart docker
 
   #Build containers
-  sudo docker compose -f /home/ubuntu/aj_fencing_page/docker-compose.yaml up -d
+  sudo docker compose -f /home/ubuntu/odoo/docker-compose.yaml up -d
