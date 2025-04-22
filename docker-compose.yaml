@@ -12,6 +12,8 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - frontend
 
   web:
     image: odoo:18.0
@@ -24,6 +26,8 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
+    networks:
+      - frontend
   db:
     image: postgres:15
     environment:
@@ -33,3 +37,14 @@ services:
 
 volumes:
   odoo-web-data:
+
+
+networks:
+  frontend:
+    # Specify driver options
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+  backend:
+    # Use a custom driver
+    driver: custom-driver
