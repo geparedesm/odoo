@@ -23,7 +23,7 @@ services:
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
     mem_limit: 512m
-    cpus: 0.5
+    cpus: 0.25
 
   db:
     image: postgres:15
