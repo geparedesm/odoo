@@ -128,3 +128,26 @@ resource "aws_route53_record" "ajfencing_test" {
   ttl     = "300"
   records = [aws_instance.ec2_instance.public_ip]
 }
+
+#####################
+# GP-Developer      #
+#####################
+
+resource "aws_route53_zone" "gp-developer" {
+  name = "gp-developer.com"
+}
+
+resource "aws_route53_record" "gp-developer_root" {
+  zone_id = aws_route53_zone.gp-developer.zone_id
+  name    = "gp-developer.com"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_instance.ec2_instance.public_ip]
+}
+resource "aws_route53_record" "gp-developer_www" {
+  zone_id = aws_route53_zone.gp-developer.zone_id
+  name    = "www.gp-developer.com"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_instance.ec2_instance.public_ip]
+}
