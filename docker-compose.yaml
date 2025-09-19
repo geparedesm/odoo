@@ -7,12 +7,12 @@ services:
       - "81:81"
       - "443:443"
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - ./letsencrypt/data:/data
+      - ./letsencrypt/etc:/etc/letsencrypt
     mem_limit: 250m
     cpus: 0.15
   odoo:
-    image: odoo:18.0
+    image: odoo:13.0
     restart: unless-stopped
     platform: linux/x86_64
     depends_on:
@@ -21,13 +21,24 @@ services:
       - "8069:8069"
     volumes:
       - odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
-    mem_limit: 512m
-    cpus: 0.25
+      - ./odoo/etc:/etc/odoo
+      - ./odoo/addons:/mnt/extra-addons
+    command: >
+      odoo
+      --dev all
+      -r odoo
+      -w odoo_password
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons
+      --log-level=debug 
+      --max-cron-threads=1 
+  # Recommended for development to avoid conflicts
+  # --limit-time-cpu=6000 # Increase timeout for large operations
+  # --limit-time-real=12000 # Increase timeout for large operations
+  # mem_limit: 512m
+  # cpus: 0.25
 
   db:
-    image: postgres:15
+    image: postgres:11
     restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
