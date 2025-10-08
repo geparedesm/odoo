@@ -31,11 +31,6 @@ services:
       --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons
       --log-level=debug 
       --max-cron-threads=1 
-  # Recommended for development to avoid conflicts
-  # --limit-time-cpu=6000 # Increase timeout for large operations
-  # --limit-time-real=12000 # Increase timeout for large operations
-  # mem_limit: 512m
-  # cpus: 0.25
 
   db:
     image: postgres:11
