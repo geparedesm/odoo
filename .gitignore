@@ -9,7 +9,6 @@ Terraform/terraform.tfstate
 confiig/rootkey.csv
 confiig/ssl.conf
 confiig/gmail.conf
-/odoo/addons/*
 /odoo/templates/*
 odoo/.DS_Store
 private/odoo.conf
