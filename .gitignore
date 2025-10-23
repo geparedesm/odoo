@@ -11,5 +11,4 @@ confiig/ssl.conf
 confiig/gmail.conf
 /odoo/templates/*
 odoo/.DS_Store
-private/odoo.conf
-private/ssl.conf
+private/*
