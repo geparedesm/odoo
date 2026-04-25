@@ -29,9 +29,8 @@
 
             <div class="header-minimal">
               <div class="profile-img">
-                <img
-                  t-att-src="portfolio.get_profile_image_url() if portfolio and portfolio.profile_image else '/custom_web/static/src/img/my-profile-img.webp'"
-                  alt="Gabriel Paredes" class="img-fluid rounded-circle" />
+                <img src="/custom_web/static/src/img/logo.webp" alt="GP Developer logo"
+                  class="img-fluid" />
               </div>
 
               <a href="#hero" class="logo d-flex align-items-center justify-content-center">
@@ -39,9 +38,6 @@
                   <t t-esc="portfolio.name if portfolio else 'Portfolio'" />
                 </h1>
               </a>
-              <p class="header-role">
-                <t t-esc="portfolio.focus_text if portfolio and portfolio.focus_text else 'Odoo, full-stack apps, automation'" />
-              </p>
             </div>
 
             <div class="social-links text-center">

@@ -254,23 +254,23 @@ h6 {
 .header-minimal {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   margin-bottom: 24px;
 }
 
 .header .profile-img img {
   display: block;
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.14);
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
 }
 
 .header .logo {
   line-height: 1;
   margin-bottom: 0;
-  justify-content: flex-start !important;
+  justify-content: center !important;
+  text-align: center;
 }
 
 .header .logo h1 {
@@ -283,21 +283,16 @@ h6 {
 
 .header .social-links {
   margin: 8px 0 22px;
-  text-align: left !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 /*--------------------------------------------------------------
 # Portfolio Refresh
 --------------------------------------------------------------*/
-
-.header-role {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.56);
-  font-size: 12px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
 
 .hero-background {
   filter: brightness(0.42) saturate(0.9);
@@ -621,7 +616,7 @@ h6 {
   justify-content: center;
   background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.75);
-  margin: 0 6px 0 0;
+  margin: 0;
   border-radius: 999px;
   text-align: center;
   width: 34px;
