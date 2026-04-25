@@ -13,6 +13,12 @@
    * Header toggle
    */
   $(document).ready(function () {
+    if (document.querySelector('.portfolio-page-marker')) {
+      ['footer#bottom', '.o_footer_copyright'].forEach((selector) => {
+        document.querySelectorAll(selector).forEach((node) => node.remove());
+      });
+    }
+
     const headerToggleBtn = document.querySelector('.header-toggle');
     function headerToggle() {
       document.querySelector('#header').classList.toggle('header-show');

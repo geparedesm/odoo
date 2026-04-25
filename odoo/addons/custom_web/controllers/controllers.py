@@ -5,7 +5,19 @@ from odoo import http
 class CustomWeb(http.Controller):
     @http.route('/', type='http', auth='public', website=True)
     def index(self, **kw):
-        return http.request.render('custom_web.portfolio_page', {})
+        profile = http.request.env['portfolio.profile'].sudo().search(
+            [('website_published', '=', True)],
+            order='sequence, id',
+            limit=1,
+        )
+        if not profile:
+            profile = http.request.env['portfolio.profile'].sudo().create({
+                'name': 'Portfolio',
+                'hero_title': 'Portfolio',
+            })
+        return http.request.render('custom_web.portfolio_page', {
+            'portfolio': profile,
+        })
 
     # @http.route('/custom_web/custom_web/objects/', type='http', auth='public', website=True)
     # def list(self, **kw):

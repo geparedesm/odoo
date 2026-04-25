@@ -1,2 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_custom_web_custom_web,custom_web.custom_web,model_custom_web_custom_web,base.group_user,1,1,1,1
+access_portfolio_profile,portfolio.profile,model_portfolio_profile,base.group_user,1,1,1,1
+access_portfolio_social_link,portfolio.social.link,model_portfolio_social_link,base.group_user,1,1,1,1
+access_portfolio_skill_category,portfolio.skill.category,model_portfolio_skill_category,base.group_user,1,1,1,1
+access_portfolio_skill,portfolio.skill,model_portfolio_skill,base.group_user,1,1,1,1
+access_portfolio_experience,portfolio.experience,model_portfolio_experience,base.group_user,1,1,1,1
+access_portfolio_education,portfolio.education,model_portfolio_education,base.group_user,1,1,1,1
+access_portfolio_language,portfolio.language,model_portfolio_language,base.group_user,1,1,1,1
+access_portfolio_project,portfolio.project,model_portfolio_project,base.group_user,1,1,1,1
+access_portfolio_contact_item,portfolio.contact.item,model_portfolio_contact_item,base.group_user,1,1,1,1

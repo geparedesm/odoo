@@ -1,0 +1,271 @@
+<odoo noupdate="1">
+  <data>
+    <record id="portfolio_profile_default" model="portfolio.profile">
+      <field name="name">Gabriel Paredes Portfolio</field>
+      <field name="website_published">True</field>
+      <field name="hero_badge">Available for freelance and product work</field>
+      <field name="hero_title">Engineering digital products that feel solid, useful, and ready for the real world.</field>
+      <field name="hero_intro">I'm Gabriel Paredes, a mechatronic engineer and full-stack developer based in Perth. I build Odoo customizations, mobile apps, integrations, and automation systems that connect software with operations.</field>
+      <field name="typed_items">Odoo solutions,mobile apps,web platforms,automation systems</field>
+      <field name="focus_text">Odoo, full-stack apps, automation</field>
+      <field name="based_in_text">Perth, Australia</field>
+      <field name="working_style_text">From MVPs to production delivery</field>
+      <field name="about_title">Full-stack developer with a systems view</field>
+      <field name="about_text">My background in mechatronics and software lets me move comfortably between backend logic, polished interfaces, integrations, and operational tooling. I enjoy projects where product thinking and technical execution both matter.</field>
+      <field name="skills_intro">The stack changes with the problem, but I tend to work where product delivery, integrations, and operational reliability meet.</field>
+      <field name="resume_intro">A mix of product engineering, ERP customization, infrastructure work, and hands-on delivery across teams and client environments.</field>
+      <field name="portfolio_intro">Projects where product design, backend architecture, and real operational use had to work together.</field>
+      <field name="contact_intro">If you need a developer who can move between product, code, and operations, let's talk about the project.</field>
+      <field name="community_text">Long-term IEEE volunteer with leadership roles across student branch, public relations, and regional ambassador programs, alongside community engagement with healthcare, education, and technology initiatives.</field>
+      <field name="website_url">https://www.gp-developer.com</field>
+      <field name="email">info@gp-developer.com</field>
+      <field name="phone">+61 415 530 419</field>
+      <field name="availability_text">Open for freelance projects</field>
+      <field name="clients_count">35</field>
+      <field name="projects_count">120</field>
+      <field name="years_count">10</field>
+    </record>
+
+    <record id="portfolio_social_facebook" model="portfolio.social.link">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">10</field>
+      <field name="name">Facebook</field>
+      <field name="url">https://www.facebook.com/gpdeveloperec</field>
+      <field name="icon_class">bi bi-facebook</field>
+    </record>
+    <record id="portfolio_social_instagram" model="portfolio.social.link">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="name">Instagram</field>
+      <field name="url">https://www.instagram.com/gp_developer</field>
+      <field name="icon_class">bi bi-instagram</field>
+    </record>
+    <record id="portfolio_social_linkedin" model="portfolio.social.link">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">30</field>
+      <field name="name">LinkedIn</field>
+      <field name="url">https://www.linkedin.com/in/geparedesm/</field>
+      <field name="icon_class">bi bi-linkedin</field>
+    </record>
+
+    <record id="portfolio_skill_category_core" model="portfolio.skill.category">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">10</field>
+      <field name="name">Core Stack</field>
+    </record>
+    <record id="portfolio_skill_category_tools" model="portfolio.skill.category">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="name">Platforms and Tools</field>
+    </record>
+    <record id="portfolio_skill_category_delivery" model="portfolio.skill.category">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">30</field>
+      <field name="name">What I Deliver</field>
+    </record>
+
+    <record id="portfolio_skill_odoo" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="name">Odoo</field>
+    </record>
+    <record id="portfolio_skill_python" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">20</field>
+      <field name="name">Python</field>
+    </record>
+    <record id="portfolio_skill_js" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">30</field>
+      <field name="name">JavaScript</field>
+    </record>
+    <record id="portfolio_skill_ts" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">40</field>
+      <field name="name">TypeScript</field>
+    </record>
+    <record id="portfolio_skill_react" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">50</field>
+      <field name="name">React</field>
+    </record>
+    <record id="portfolio_skill_react_native" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">60</field>
+      <field name="name">React Native</field>
+    </record>
+    <record id="portfolio_skill_flutter" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">70</field>
+      <field name="name">Flutter</field>
+    </record>
+    <record id="portfolio_skill_django" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_core" />
+      <field name="sequence">80</field>
+      <field name="name">Django</field>
+    </record>
+
+    <record id="portfolio_skill_docker" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="name">Docker</field>
+    </record>
+    <record id="portfolio_skill_kubernetes" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">20</field>
+      <field name="name">Kubernetes</field>
+    </record>
+    <record id="portfolio_skill_postgresql" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">30</field>
+      <field name="name">PostgreSQL</field>
+    </record>
+    <record id="portfolio_skill_elasticsearch" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">40</field>
+      <field name="name">Elasticsearch</field>
+    </record>
+    <record id="portfolio_skill_kibana" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">50</field>
+      <field name="name">Kibana</field>
+    </record>
+    <record id="portfolio_skill_logstash" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">60</field>
+      <field name="name">Logstash</field>
+    </record>
+    <record id="portfolio_skill_rest" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">70</field>
+      <field name="name">REST APIs</field>
+    </record>
+    <record id="portfolio_skill_microservices" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_tools" />
+      <field name="sequence">80</field>
+      <field name="name">Microservices</field>
+    </record>
+
+    <record id="portfolio_skill_delivery_erp" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_delivery" />
+      <field name="name">Custom ERP and Odoo workflows</field>
+    </record>
+    <record id="portfolio_skill_delivery_mobile" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_delivery" />
+      <field name="sequence">20</field>
+      <field name="name">Mobile apps for Android and iOS</field>
+    </record>
+    <record id="portfolio_skill_delivery_admin" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_delivery" />
+      <field name="sequence">30</field>
+      <field name="name">Admin panels and internal tools</field>
+    </record>
+    <record id="portfolio_skill_delivery_automation" model="portfolio.skill">
+      <field name="category_id" ref="portfolio_skill_category_delivery" />
+      <field name="sequence">40</field>
+      <field name="name">Automation, monitoring, and integrations</field>
+    </record>
+
+    <record id="portfolio_experience_duodata" model="portfolio.experience">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">10</field>
+      <field name="title">Full Stack Developer</field>
+      <field name="company">Duodata, Ecuador</field>
+      <field name="period">2021 - 2025</field>
+      <field name="highlights">Built and customized Odoo ERP modules for the Ecuadorian Navy to improve operations, reporting, and decision support.
+Developed an Elasticsearch-based cybersecurity warehouse for monitoring, alerts, and real-time reporting.
+Created administrative tooling for biometric devices with Flutter and service integrations in Python and Node.js.
+Scaled mobile applications used by more than 25,000 active users.</field>
+    </record>
+    <record id="portfolio_experience_gp" model="portfolio.experience">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="title">Full Stack Developer</field>
+      <field name="company">GP-Developer, Ecuador</field>
+      <field name="period">2018 - 2021</field>
+      <field name="highlights">Delivered real-time tracking and device-control platforms for vehicle and location solutions.
+Designed custom protocols and backend services that reduced latency and improved system throughput.
+Released multiplatform Flutter applications for web and mobile environments.
+Improved release confidence with CI/CD and stronger automated test coverage.</field>
+    </record>
+
+    <record id="portfolio_education_advanced" model="portfolio.education">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">10</field>
+      <field name="title">ICT60220 Advanced Diploma of Information Technology</field>
+      <field name="institution">National Institute of Technology, Australia</field>
+      <field name="year">2026</field>
+    </record>
+    <record id="portfolio_education_diploma" model="portfolio.education">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="title">ICT50220 Diploma of Information Technology</field>
+      <field name="institution">National Institute of Technology, Australia</field>
+      <field name="year">2025</field>
+    </record>
+    <record id="portfolio_education_mechatronic" model="portfolio.education">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">30</field>
+      <field name="title">Mechatronic Engineering</field>
+      <field name="institution">Universidad Técnica del Norte, Ecuador</field>
+      <field name="year">2019</field>
+    </record>
+
+    <record id="portfolio_language_spanish" model="portfolio.language">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="name">Spanish</field>
+      <field name="level">Native</field>
+    </record>
+    <record id="portfolio_language_english" model="portfolio.language">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="name">English</field>
+      <field name="level">B2</field>
+    </record>
+
+    <record id="portfolio_project_odoo" model="portfolio.project">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">10</field>
+      <field name="name">Odoo ERP Customization</field>
+      <field name="project_type">ERP / Operations</field>
+      <field name="summary">Custom modules, workflow adjustments, and reporting improvements for organizations that need Odoo aligned with their real processes.</field>
+    </record>
+    <record id="portfolio_project_mobile" model="portfolio.project">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="name">Cross-Platform Applications</field>
+      <field name="project_type">Mobile / Product</field>
+      <field name="summary">Flutter and React Native products designed for scale, clear user flows, and reliable day-to-day usage.</field>
+    </record>
+    <record id="portfolio_project_automation" model="portfolio.project">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">30</field>
+      <field name="name">Industrial and Data Systems</field>
+      <field name="project_type">Automation / Monitoring</field>
+      <field name="summary">Monitoring dashboards, data pipelines, and automation tools for environments where uptime and visibility matter.</field>
+    </record>
+
+    <record id="portfolio_contact_email" model="portfolio.contact.item">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">10</field>
+      <field name="label">Email</field>
+      <field name="value">info@gp-developer.com</field>
+      <field name="link">mailto:info@gp-developer.com</field>
+      <field name="icon_class">bi bi-envelope</field>
+    </record>
+    <record id="portfolio_contact_phone" model="portfolio.contact.item">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">20</field>
+      <field name="label">Phone</field>
+      <field name="value">+61 415 530 419</field>
+      <field name="link">tel:+61415530419</field>
+      <field name="icon_class">bi bi-telephone</field>
+    </record>
+    <record id="portfolio_contact_linkedin" model="portfolio.contact.item">
+      <field name="profile_id" ref="portfolio_profile_default" />
+      <field name="sequence">30</field>
+      <field name="label">LinkedIn</field>
+      <field name="value">linkedin.com/in/geparedesm</field>
+      <field name="link">https://www.linkedin.com/in/geparedesm/</field>
+      <field name="icon_class">bi bi-linkedin</field>
+    </record>
+  </data>
+</odoo>

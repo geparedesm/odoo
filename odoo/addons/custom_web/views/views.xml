@@ -1,60 +1,192 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="custom_web.list">
-      <field name="name">custom_web list</field>
-      <field name="model">custom_web.custom_web</field>
+    <record id="view_portfolio_profile_tree" model="ir.ui.view">
+      <field name="name">portfolio.profile.tree</field>
+      <field name="model">portfolio.profile</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="sequence" widget="handle" />
+          <field name="name" />
+          <field name="website_published" />
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="custom_web.action_window">
-      <field name="name">custom_web window</field>
-      <field name="res_model">custom_web.custom_web</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
+    <record id="view_portfolio_profile_form" model="ir.ui.view">
+      <field name="name">portfolio.profile.form</field>
+      <field name="model">portfolio.profile</field>
+      <field name="arch" type="xml">
+        <form string="Portfolio Content">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" placeholder="Portfolio name" />
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="sequence" />
+                <field name="website_published" />
+              </group>
+              <group>
+                <field name="website_url" />
+                <field name="availability_text" />
+              </group>
+            </group>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="custom_web.action_server">
-      <field name="name">custom_web server</field>
-      <field name="model_id" ref="model_custom_web_custom_web"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+            <notebook>
+              <page string="Hero">
+                <group>
+                  <group>
+                    <field name="hero_badge" />
+                    <field name="hero_title" />
+                    <field name="typed_items" />
+                    <field name="hero_intro" nolabel="1" placeholder="Intro text shown in the hero section..." />
+                  </group>
+                  <group>
+                    <field name="profile_image" widget="image" class="oe_avatar" />
+                    <field name="hero_background_image" widget="image" />
+                  </group>
+                </group>
+                <group string="Summary Card">
+                  <group>
+                    <field name="focus_text" />
+                    <field name="based_in_text" />
+                    <field name="working_style_text" />
+                  </group>
+                </group>
+              </page>
+
+              <page string="About">
+                <group>
+                  <field name="about_title" />
+                  <field name="about_text" nolabel="1" placeholder="Tell visitors how you work and what makes your background useful." />
+                </group>
+                <group string="Quick Facts">
+                  <group>
+                    <field name="email" />
+                    <field name="phone" />
+                  </group>
+                  <group>
+                    <field name="clients_count" />
+                    <field name="projects_count" />
+                    <field name="years_count" />
+                  </group>
+                </group>
+              </page>
+
+              <page string="Social Links">
+                <field name="social_link_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                    <field name="url" />
+                    <field name="icon_class" />
+                  </tree>
+                </field>
+              </page>
+
+              <page string="Skills">
+                <field name="skills_intro" nolabel="1" placeholder="Optional intro shown above the skills section." />
+                <field name="skill_category_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                  </tree>
+                  <form string="Skill Category">
+                    <sheet>
+                      <group>
+                        <field name="name" />
+                        <field name="sequence" />
+                      </group>
+                      <field name="skill_ids" nolabel="1">
+                        <tree editable="bottom">
+                          <field name="sequence" widget="handle" />
+                          <field name="name" />
+                        </tree>
+                      </field>
+                    </sheet>
+                  </form>
+                </field>
+              </page>
+
+              <page string="Resume">
+                <group>
+                  <field name="resume_intro" nolabel="1" placeholder="Intro shown above the resume section." />
+                  <field name="community_text" nolabel="1" placeholder="Short community or volunteering summary." />
+                </group>
+                <separator string="Experience" />
+                <field name="experience_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="title" />
+                    <field name="company" />
+                    <field name="period" />
+                    <field name="highlights" />
+                  </tree>
+                </field>
+                <separator string="Education" />
+                <field name="education_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="title" />
+                    <field name="institution" />
+                    <field name="year" />
+                  </tree>
+                </field>
+                <separator string="Languages" />
+                <field name="language_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                    <field name="level" />
+                  </tree>
+                </field>
+              </page>
+
+              <page string="Projects">
+                <group>
+                  <field name="portfolio_intro" nolabel="1" placeholder="Intro shown above the projects section." />
+                </group>
+                <field name="project_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="name" />
+                    <field name="project_type" />
+                    <field name="project_url" />
+                    <field name="image" widget="image" />
+                  </tree>
+                </field>
+              </page>
+
+              <page string="Contact">
+                <group>
+                  <field name="contact_intro" nolabel="1" placeholder="Text shown above the contact cards." />
+                </group>
+                <field name="contact_item_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="label" />
+                    <field name="value" />
+                    <field name="link" />
+                    <field name="icon_class" />
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
       </field>
     </record>
--->
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="custom_web" id="custom_web.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="custom_web.menu_1" parent="custom_web.menu_root"/>
-    <menuitem name="Menu 2" id="custom_web.menu_2" parent="custom_web.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="custom_web.menu_1_list" parent="custom_web.menu_1"
-              action="custom_web.action_window"/>
-    <menuitem name="Server to list" id="custom_web" parent="custom_web.menu_2"
-              action="custom_web.action_server"/>
--->
+    <record id="action_portfolio_profile" model="ir.actions.act_window">
+      <field name="name">Portfolio Content</field>
+      <field name="res_model">portfolio.profile</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_portfolio_root" name="Portfolio" sequence="40" />
+    <menuitem id="menu_portfolio_content" name="Content" parent="menu_portfolio_root"
+      action="action_portfolio_profile" sequence="10" />
   </data>
 </odoo>
