@@ -53,12 +53,24 @@
 
             <nav id="navmenu" class="navmenu">
               <ul>
-                <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
-                <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-                <li><a href="#skills"><i class="bi bi-hdd-stack navicon"></i> Skills</a></li>
-                <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-                <li><a href="#portfolio"><i class="bi bi-grid navicon"></i> Portfolio</a></li>
-                <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+                <li>
+                  <a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a>
+                </li>
+                <li>
+                  <a href="#about"><i class="bi bi-person navicon"></i> About</a>
+                </li>
+                <li>
+                  <a href="#skills"><i class="bi bi-hdd-stack navicon"></i> Skills</a>
+                </li>
+                <li>
+                  <a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a>
+                </li>
+                <li>
+                  <a href="#portfolio"><i class="bi bi-grid navicon"></i> Portfolio</a>
+                </li>
+                <li>
+                  <a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a>
+                </li>
               </ul>
             </nav>
           </header>
@@ -72,13 +84,16 @@
               <div class="container hero-shell" data-aos="fade-up" data-aos-delay="100">
                 <div class="hero-minimal">
                   <p class="hero-kicker">
-                    <t t-esc="portfolio.focus_text if portfolio and portfolio.focus_text else 'Odoo, full-stack apps, automation'" />
+                    <t
+                      t-esc="portfolio.hero_badge if portfolio and portfolio.hero_badge else 'Odoo, full-stack apps, automation'" />
                   </p>
                   <h2>
-                    <t t-esc="portfolio.hero_title if portfolio and portfolio.hero_title else 'Engineering digital products that feel solid, useful, and ready for the real world.'" />
+                    <t
+                      t-esc="portfolio.hero_title if portfolio and portfolio.hero_title else 'Engineering digital products that feel solid, useful, and ready for the real world.'" />
                   </h2>
-                  <p class="hero-copy">
-                    <t t-esc="portfolio.hero_intro if portfolio and portfolio.hero_intro else ''" />
+                  <p class="hero-copy hero-typed-line" t-if="portfolio and portfolio.typed_items">
+                    I'm <span class="typed" t-att-data-typed-items="portfolio.typed_items"></span><span
+                      class="typed-cursor typed-cursor--blink">|</span>
                   </p>
                   <div class="hero-actions">
                     <a href="#portfolio" class="btn btn-primary hero-btn">View Projects</a>
@@ -108,17 +123,20 @@
                   <div class="col-lg-7">
                     <div class="about-panel">
                       <h3>
-                        <t t-esc="portfolio.about_title if portfolio and portfolio.about_title else 'Full-stack developer with a systems view'" />
+                        <t
+                          t-esc="portfolio.about_title if portfolio and portfolio.about_title else 'Full-stack developer with a systems view'" />
                       </h3>
                       <p>
-                        <t t-esc="portfolio.about_text if portfolio and portfolio.about_text else ''" />
+                        <t
+                          t-esc="portfolio.about_text if portfolio and portfolio.about_text else ''" />
                       </p>
                       <div class="row g-3 info-grid">
                         <div class="col-md-6" t-if="portfolio and portfolio.website_url">
                           <div class="info-chip">
                             <span>Website</span>
                             <strong>
-                              <a t-att-href="portfolio.website_url" target="_blank" rel="noopener noreferrer">
+                              <a t-att-href="portfolio.website_url" target="_blank"
+                                rel="noopener noreferrer">
                                 <t t-esc="portfolio.website_url" />
                               </a>
                             </strong>
@@ -185,10 +203,14 @@
                 <div class="capability-grid">
                   <t t-foreach="portfolio.skill_category_ids if portfolio else []" t-as="category">
                     <div class="capability-panel">
-                      <h3><t t-esc="category.name" /></h3>
+                      <h3>
+                        <t t-esc="category.name" />
+                      </h3>
                       <div class="skill-pills">
                         <t t-foreach="category.skill_ids" t-as="skill">
-                          <span><t t-esc="skill.name" /></span>
+                          <span>
+                            <t t-esc="skill.name" />
+                          </span>
                         </t>
                       </div>
                     </div>
@@ -212,12 +234,24 @@
                       <h3 class="resume-title">Experience</h3>
                       <t t-foreach="portfolio.experience_ids if portfolio else []" t-as="experience">
                         <div class="resume-item">
-                          <h4><t t-esc="experience.title" /></h4>
-                          <h5><t t-esc="experience.period" /></h5>
-                          <p><em><t t-esc="experience.company" /></em></p>
+                          <h4>
+                            <t t-esc="experience.title" />
+                          </h4>
+                          <h5>
+                            <t t-esc="experience.period" />
+                          </h5>
+                          <p>
+                            <em>
+                              <t t-esc="experience.company" />
+                            </em>
+                          </p>
                           <ul>
-                            <t t-foreach="experience.highlights.splitlines() if experience.highlights else []" t-as="line">
-                              <li t-if="line.strip()"><t t-esc="line.strip()" /></li>
+                            <t
+                              t-foreach="experience.highlights.splitlines() if experience.highlights else []"
+                              t-as="line">
+                              <li t-if="line.strip()">
+                                <t t-esc="line.strip()" />
+                              </li>
                             </t>
                           </ul>
                         </div>
@@ -230,9 +264,15 @@
                         <h3>Education</h3>
                         <t t-foreach="portfolio.education_ids if portfolio else []" t-as="education">
                           <div class="education-item">
-                            <strong><t t-esc="education.title" /></strong>
-                            <span><t t-esc="education.institution" /></span>
-                            <small><t t-esc="education.year" /></small>
+                            <strong>
+                              <t t-esc="education.title" />
+                            </strong>
+                            <span>
+                              <t t-esc="education.institution" />
+                            </span>
+                            <small>
+                              <t t-esc="education.year" />
+                            </small>
                           </div>
                         </t>
                       </div>
@@ -240,14 +280,20 @@
                         <h3>Languages</h3>
                         <t t-foreach="portfolio.language_ids if portfolio else []" t-as="language">
                           <div class="language-row">
-                            <span><t t-esc="language.name" /></span>
-                            <strong><t t-esc="language.level" /></strong>
+                            <span>
+                              <t t-esc="language.name" />
+                            </span>
+                            <strong>
+                              <t t-esc="language.level" />
+                            </strong>
                           </div>
                         </t>
                       </div>
                       <div class="capability-panel" t-if="portfolio and portfolio.community_text">
                         <h3>Community</h3>
-                        <p><t t-esc="portfolio.community_text" /></p>
+                        <p>
+                          <t t-esc="portfolio.community_text" />
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -259,7 +305,8 @@
               <div class="container section-title" data-aos="fade-up">
                 <h2>Selected Work</h2>
                 <p>
-                  <t t-esc="portfolio.portfolio_intro if portfolio and portfolio.portfolio_intro else ''" />
+                  <t
+                    t-esc="portfolio.portfolio_intro if portfolio and portfolio.portfolio_intro else ''" />
                 </p>
               </div>
 
@@ -273,14 +320,21 @@
                           t-att-alt="project.name" class="img-fluid" />
                       </div>
                       <div class="project-content">
-                        <span class="project-type"><t t-esc="project.project_type" /></span>
-                        <h3><t t-esc="project.name" /></h3>
-                        <p><t t-esc="project.summary" /></p>
+                        <span class="project-type">
+                          <t t-esc="project.project_type" />
+                        </span>
+                        <h3>
+                          <t t-esc="project.name" />
+                        </h3>
+                        <p>
+                          <t t-esc="project.summary" />
+                        </p>
                         <a t-if="project.image" t-att-href="project.get_image_url()"
                           class="project-link glightbox" data-gallery="portfolio-gallery"
                           t-att-title="project.name">Preview Project</a>
                         <a t-elif="project.project_url" t-att-href="project.project_url"
-                          class="project-link" target="_blank" rel="noopener noreferrer">Open Project</a>
+                          class="project-link" target="_blank" rel="noopener noreferrer">Open
+                          Project</a>
                       </div>
                     </article>
                   </t>
@@ -292,7 +346,8 @@
               <div class="container section-title" data-aos="fade-up">
                 <h2>Contact</h2>
                 <p>
-                  <t t-esc="portfolio.contact_intro if portfolio and portfolio.contact_intro else ''" />
+                  <t
+                    t-esc="portfolio.contact_intro if portfolio and portfolio.contact_intro else ''" />
                 </p>
               </div>
 
@@ -301,8 +356,11 @@
                   <t t-foreach="portfolio.contact_item_ids if portfolio else []" t-as="item">
                     <div class="contact-card">
                       <i t-att-class="item.icon_class"></i>
-                      <h3><t t-esc="item.label" /></h3>
-                      <a t-att-href="item.link or '#'" t-att-target="'_blank' if item.link and item.link.startswith('http') else None"
+                      <h3>
+                        <t t-esc="item.label" />
+                      </h3>
+                      <a t-att-href="item.link or '#'"
+                        t-att-target="'_blank' if item.link and item.link.startswith('http') else None"
                         t-att-rel="'noopener noreferrer' if item.link and item.link.startswith('http') else None">
                         <t t-esc="item.value" />
                       </a>
@@ -313,7 +371,8 @@
             </section>
           </main>
 
-          <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+          <a href="#" id="scroll-top"
+            class="scroll-top d-flex align-items-center justify-content-center">
             <i class="bi bi-arrow-up-short"></i>
           </a>
 

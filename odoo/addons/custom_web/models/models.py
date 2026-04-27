@@ -14,7 +14,6 @@ class PortfolioProfile(models.Model):
 
     hero_badge = fields.Char(default="Available for freelance and product work")
     hero_title = fields.Char(required=True)
-    hero_intro = fields.Text()
     typed_items = fields.Char(
         string="Typed Highlights",
         help="Comma-separated rotating text for the hero section.",

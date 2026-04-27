@@ -41,7 +41,6 @@
                     <field name="hero_badge" />
                     <field name="hero_title" />
                     <field name="typed_items" />
-                    <field name="hero_intro" nolabel="1" placeholder="Intro text shown in the hero section..." />
                   </group>
                   <group>
                     <field name="profile_image" widget="image" class="oe_avatar" />

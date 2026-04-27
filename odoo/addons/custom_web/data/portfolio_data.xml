@@ -3,10 +3,9 @@
     <record id="portfolio_profile_default" model="portfolio.profile">
       <field name="name">Gabriel Paredes Portfolio</field>
       <field name="website_published">True</field>
-      <field name="hero_badge">Available for freelance and product work</field>
+      <field name="hero_badge">Odoo, full-stack apps, automation</field>
       <field name="hero_title">Engineering digital products that feel solid, useful, and ready for the real world.</field>
-      <field name="hero_intro">I'm Gabriel Paredes, a mechatronic engineer and full-stack developer based in Perth. I build Odoo customizations, mobile apps, integrations, and automation systems that connect software with operations.</field>
-      <field name="typed_items">Odoo solutions,mobile apps,web platforms,automation systems</field>
+      <field name="typed_items">I'm Gabriel Paredes, a mechatronic engineer and full-stack developer based in Perth. I build Odoo customizations, mobile apps, integrations, and automation systems that connect software with operations.</field>
       <field name="focus_text">Odoo, full-stack apps, automation</field>
       <field name="based_in_text">Perth, Australia</field>
       <field name="working_style_text">From MVPs to production delivery</field>
